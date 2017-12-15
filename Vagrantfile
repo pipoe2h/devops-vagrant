@@ -18,7 +18,7 @@ net = hosts["subnet"]
 # Create boxes
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     hosts["vms"].each_with_index do |servers, index|
-        ip = servers["ip"] ||= "10#{index}"
+        ip = servers["ip"] ||= "#{index + 100}"
         hostname = servers["name"]
 
         config.vm.define servers["name"] do |srv|
