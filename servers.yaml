@@ -1,0 +1,22 @@
+---
+linked_mode: true
+
+subnet: 192.168.34
+
+vms:
+  - name: openshift
+    cpu: 2
+    ram: 4096
+    box: centos/7
+    ip: 10
+    provision:
+      - script: scripts/openshift.sh
+  - name: vm2
+    cpu: 1
+    ram: 512
+    box: centos/7
+    ip: 12
+  - name: ubuntu
+    cpu: 1
+    ram: 512
+    box: ubuntu/xenial64
